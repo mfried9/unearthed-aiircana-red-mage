@@ -1,0 +1,2032 @@
+{
+	"_meta": {
+		"sources": [{
+			"json": "UnearthedAiircanaRedMage",
+			"abbreviation": "FFRM",
+			"full": "Unearthed Aiircana: Red Mage",
+			"authors": [
+				"u/aiir_"
+			],
+			"convertedBy": [
+				"ProfForp"
+			],
+			"color": "E34234",
+			"version": "1.5",
+			"url": "https://www.gmbinder.com/share/-MdUM09F9zodw4FFpoJR",
+			"targetSchema": "1.2.3"
+		}],
+		"dateAdded": 0,
+		"dependencies": {
+			"spell": [
+				"PHB",
+				"XGE",
+				"TCE"
+			]
+		},
+		"dateLastModified": 0
+	},
+	"class": [
+		{
+			"name": "Red Mage",
+			"source": "UnearthedAiircanaRedMage",
+			"fluff": [
+				{
+					"type": "section",
+					"name": "Red Mage",
+					"entries": [
+						"Among the weeds a beautiful rose blooms, its arsenal a piercing thorn. The scarlet-clad warrior dives into the midst of combat, her rapier empowered by unique energy. She strikes down enemies with blinding speed and powerful magic as she moves toward her next target.",
+						"A confident smirk spreads across the face of the veteran red mage. He unleashes spell after spell in quick succession, drawing on countless elements, casting relentlessly until his opponent is annihilated.",
+						"Like a lightning bolt streaking through the battlefield, she makes quick work of foe after foe. At the first sign of danger, the crimson beauty flips over the head of the enemy behind her, letting loose a wave of energy as a parting gift.",
+						"Red Mages have drawn on a multitude of disciplines across the world, mixing black and white magic along with focused swordplay and style. All of these abilities have combined in this alluring mix of talent and flair.",
+						{
+							"type": "entries",
+							"name": "Vermillion Casters",
+							"entries": [
+								"Some fairy tales of Gyr Abania speak of the heroic deeds and daring adventures of mages clothed in crimson. These adventurers are known as Red Mages: They travel the globe, protecting the good in the world by drawing on their unique red magic, while mixing martial prowess into a flawless and graceful battle style."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Wielders of Black and White",
+							"entries": [
+								"The essence of what is referred to as red magic stems from two sources. The first is utilizing the arcane energy that lies within oneself — the Black, though even just a spark of that is enough. Because with learned control they supplement it with the second: Nature's magic — the White, which is divine in essence. This blend of both arcane and divine is what makes up red magic. With experience, a red mage can further mix their magic with the Aether to create an even more powerful magic matrix."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Creating a Red Mage",
+							"entries": [
+								"When creating a red mage, you must consider why they may be heading out on their adventure. They may have learned of a plot which endangers their home, perhaps even the world as a whole, and will stop at nothing to prevent it. Or maybe it is simply a need to chase the thrill of adventure, garner fame, and become a hero of legend.",
+								"One key consideration to make as a red mage is where you came to learn your myriad of skills. Was it through the study of old tomes you discovered in an abandoned warehouse or library? Did you meet a mentor who saw great potential in you and introduced you to the art? Whatever the origin, you wield powerful magic and elegant martial skills.",
+								{
+									"type": "entries",
+									"name": "Quick Build",
+									"entries": [
+										"You can make a red mage quickly by following these suggestions. First, make Dexterity or Intelligence your highest ability score, followed by the other as your second highest. Second, take the Folk Hero background. Third, take the Booming Blade, Jolt, and Prestidigitation cantrips, along with the 1st-level spells Burning Hands, Healing Word, and Magic Missile."
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"hd": {
+				"number": 1,
+				"faces": 8
+			},
+			"proficiency": [
+				"dex",
+				"int"
+			],
+			"spellcastingAbility": "int",
+			"startingProficiencies": {
+				"armor": [
+					"light"
+				],
+				"weapons": [
+					"simple",
+					"{@item longsword|phb|longswords}",
+					"{@item rapier|phb|rapiers}",
+					"{@item shortsword|phb|shortswords}"
+				],
+				"skills": [
+					{
+						"choose": {
+							"from": [
+								"acrobatics",
+								"arcana",
+								"athletics",
+								"history",
+								"insight",
+								"nature",
+								"performance",
+								"persuasion"
+							],
+							"count": 2
+						}
+					}
+				]
+			},
+			"startingEquipment": {
+				"additionalFromBackground": true,
+				"default": [
+					"(a) a {@item rapier|phb} or (b) a {@item longsword|phb} or (c) any {@filter simple melee weapon|items|source=phb|category=basic|type=simple weapon;melee weapon=sand}",
+					"(a) an {@item entertainer's pack|phb} or (b) an {@item explorer's pack|phb}",
+					"{@item leather armor|phb}, a crystal medium (see {@i Spellcasting Focus}, Pg. 4), and a {@item dagger|phb}"
+				],
+				"defaultData": [
+					{
+						"a": [
+							"rapier|phb"
+						],
+						"b": [
+							"longsword|phb"
+						],
+						"c": [
+							{
+								"equipmentType": "weaponSimple"
+							}
+						]
+					},
+					{
+						"a": [
+							"entertainer's pack|phb"
+						],
+						"b": [
+							"explorer's pack|phb"
+						]
+					},
+					{
+						"a": [
+							"leather armor|phb",
+							"crystal medium",
+							"dagger|phb"
+						]
+					}
+				]
+			},
+			"multiclassing": {
+				"requirements": {
+					"dex": 13,
+					"int": 13
+				},
+				"proficienciesGained": {
+					"armor": [
+						"light"
+					],
+					"weapons": [ 
+						"simple",
+						"{@item rapier|phb|rapiers}"
+					]
+				}
+			},
+			"classTableGroups": [
+				{
+					"colLabels": [
+						"{@filter Cantrips Known|spells|level=0|class=Red Mage (FFRM)}"
+					],
+					"rows": [
+						[
+							3
+						],
+						[
+							3
+						],
+						[
+							3
+						],
+						[
+							4
+						],
+						[
+							4
+						],
+						[
+							4
+						],
+						[
+							4
+						],
+						[
+							4
+						],
+						[
+							4
+						],
+						[
+							5
+						],
+						[
+							5
+						],
+						[
+							5
+						],
+						[
+							5
+						],
+						[
+							5
+						],
+						[
+							5
+						],
+						[
+							5
+						],
+						[
+							5
+						],
+						[
+							5
+						],
+						[
+							5
+						],
+						[
+							5
+						]
+					]
+				},
+				{
+					"colLabels": [
+						"{@filter Spells Known|spells|class=Red Mage (FFRM)}"
+					],
+					"rows": [
+						[
+							3
+						],
+						[
+							4
+						],
+						[
+							5
+						],
+						[
+							6
+						],
+						[
+							7
+						],
+						[
+							8
+						],
+						[
+							9
+						],
+						[
+							10
+						],
+						[
+							11
+						],
+						[
+							12
+						],
+						[
+							13
+						],
+						[
+							13
+						],
+						[
+							14
+						],
+						[
+							15
+						],
+						[
+							16
+						],
+						[
+							16
+						],
+						[
+							17
+						],
+						[
+							18
+						],
+						[
+							18
+						],
+						[
+							18
+						]
+					]
+				},
+				{
+					"title": "Spell Slots per Spell Level",
+					"colLabels": [
+						"{@filter 1st|spells|level=1|class=Red Mage (FFRM)}",
+						"{@filter 2nd|spells|level=2|class=Red Mage (FFRM)}",
+						"{@filter 3rd|spells|level=3|class=Red Mage (FFRM)}",
+						"{@filter 4th|spells|level=4|class=Red Mage (FFRM)}",
+						"{@filter 5th|spells|level=5|class=Red Mage (FFRM)}",
+						"{@filter 6th|spells|level=6|class=Red Mage (FFRM)}",
+						"{@filter 7th|spells|level=7|class=Red Mage (FFRM)}"
+					],
+					"rows": [
+						[
+							2,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							3,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							3,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							2,
+							0,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							0,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							0,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							2,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							1,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							2,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							2,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							1,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2,
+							1,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2,
+							1,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2,
+							1,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2,
+							1,
+							1
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2,
+							1,
+							1
+						]
+					]
+				}
+			],
+			"classFeatures": [
+				"Balanced Mana|Red Mage|UnearthedAiircanaRedMage|1",
+				"Spellcasting|Red Mage|UnearthedAiircanaRedMage|1",
+				"Dualcast|Red Mage|UnearthedAiircanaRedMage|2",
+				"Steadfast Parry|Red Mage|UnearthedAiircanaRedMage|2",
+				{
+					"classFeature": "Red Mage Style|Red Mage|UnearthedAiircanaRedMage|3",
+					"gainSubclassFeature": true
+				},
+				"Ability Score Improvement|Red Mage|UnearthedAiircanaRedMage|4",
+				"Balanced Mana (d8)|Red Mage|UnearthedAiircanaRedMage|5",
+				"Embolden|Red Mage|UnearthedAiircanaRedMage|5",
+				"Reprise|Red Mage|UnearthedAiircanaRedMage|6",
+				{
+					"classFeature": "Red Mage Style feature|Red Mage|UnearthedAiircanaRedMage|7",
+					"gainSubclassFeature": true
+				},
+				"Ability Score Improvement|Red Mage|UnearthedAiircanaRedMage|8",
+				"Embolden (twice)|Red Mage|UnearthedAiircanaRedMage|9",
+				"Balanced Mana (d10)|Red Mage|UnearthedAiircanaRedMage|10",
+				{
+					"classFeature": "Red Mage Style feature|Red Mage|UnearthedAiircanaRedMage|11",
+					"gainSubclassFeature": true
+				},
+				"Ability Score Improvement|Red Mage|UnearthedAiircanaRedMage|12",
+				{
+					"classFeature": "Red Mage Style feature|Red Mage|UnearthedAiircanaRedMage|14",
+					"gainSubclassFeature": true
+				},
+				"Balanced Mana (d12)|Red Mage|UnearthedAiircanaRedMage|15",
+				"Ability Score Improvement|Red Mage|UnearthedAiircanaRedMage|16",
+				"Embolden (three times)|Red Mage|UnearthedAiircanaRedMage|17",
+				"Acceleration|Red Mage|UnearthedAiircanaRedMage|18",
+				"Ability Score Improvement|Red Mage|UnearthedAiircanaRedMage|19",
+				"Limit Break|Red Mage|UnearthedAiircanaRedMage|20"
+			],
+			"subclassTitle": "Red Mage Style",
+			"classSpells": [
+				"Blade Ward",
+				{
+					"name": "Booming Blade",
+					"source": "TCE"
+				},
+				"Dancing Lights",
+				"Fire Bolt",
+				{
+					"name": "Green-Flame Blade",
+					"source": "TCE"
+				},
+				{
+					"name": "Gust",
+					"source": "XGE"
+				},
+				{
+					"name": "Jolt",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Lightning Lure",
+					"source": "TCE"
+				},
+				"Prestidigitation",
+				"Ray of Frost",
+				"Resistance",
+				"Shocking Grasp",
+				{
+					"name": "Sword Burst",
+					"source": "TCE"
+				},
+				{
+					"name": "Thunderclap",
+					"source": "XGE"
+				},
+				{
+					"name": "Word of Radiance",
+					"source": "XGE"
+				},
+				{
+					"name": "Absorb Elements",
+					"source": "XGE"
+				},
+				{
+					"name": "Burning Hands (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				"Chromatic Orb",
+				{
+					"name": "Cure Wounds (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				"Detect Magic",
+				{
+					"name": "Earth Tremor (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Expeditious Retreat (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Healing Word (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				"Hellish Rebuke",
+				{
+					"name": "Ice Knife (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Jump (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Longstrider (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Magic Missile (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Thunderwave (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Zephyr Strike (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Aganazzar's Scorcher (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				"Blindness/Deafness",
+				{
+					"name": "Dust Devil",
+					"source": "XGE"
+				},
+				{
+					"name": "Earthbind",
+					"source": "XGE"
+				},
+				{
+					"name": "Enhance Ability (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				"Flaming Sphere",
+				"Gust of Wind",
+				{
+					"name": "Lesser Restoration (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				"Magic Weapon",
+				{
+					"name": "Maximilian's Earthen Grasp",
+					"source": "XGE"
+				},
+				"Misty Step",
+				{
+					"name": "Pyrotechnics",
+					"source": "XGE"
+				},
+				{
+					"name": "Scorching Ray (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Shatter (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Snilloc's Snowball Swarm (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Warding Wind",
+					"source": "XGE"
+				},
+				"Blink",
+				"Dispel Magic",
+				"Elemental Weapon",
+				{
+					"name": "Erupting Earth (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Fireball (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Haste (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Lightning Bolt (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Mass Healing Word (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Melf's Minute Meteors",
+					"source": "XGE"
+				},
+				{
+					"name": "Revivify (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				"Sleet Storm",
+				"Slow",
+				{
+					"name": "Thunder Step (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Wind Wall (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Elemental Bane",
+					"source": "XGE"
+				},
+				{
+					"name": "Fire Shield (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Freedom of Movement (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Ice Storm (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Sickening Radiance",
+					"source": "XGE"
+				},
+				"Stone Shape",
+				{
+					"name": "Stoneskin (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Storm Sphere (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Wall of Fire (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Circle of Power (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Cone of Cold (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Flame Strike (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Greater Restoration (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Maelstrom",
+					"source": "XGE"
+				},
+				{
+					"name": "Mass Cure Wounds (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Steel Wind Strike (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				"Wall of Stone",
+				"Blade Barrier",
+				{
+					"name": "Bones of the Earth",
+					"source": "XGE"
+				},
+				{
+					"name": "Chain Lightning (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				"Eyebite",
+				"Flesh to Stone",
+				{
+					"name": "Heal (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Heroes' Feast (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				"Move Earth",
+				{
+					"name": "Scatter",
+					"source": "XGE"
+				},
+				{
+					"name": "Tasha's Otherworldly Guise",
+					"source": "TCE"
+				},
+				{
+					"name": "Wall of Ice (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Crown of Stars",
+					"source": "XGE"
+				},
+				"Delayed Blast Fireball",
+				{
+					"name": "Fire Storm (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Prismatic Spray (b)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Resurrection (w)",
+					"source": "UnearthedAiircanaRedMage"
+				},
+				{
+					"name": "Whirlwind (b)",
+					"source": "UnearthedAiircanaRedMage"
+				}
+			],
+			"spellsKnownProgression": [
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				13,
+				14,
+				15,
+				16,
+				16,
+				17,
+				18,
+				18,
+				18
+			]
+		}
+	],
+	"classFeature": [
+		{
+			"name": "Balanced Mana",
+			"source": "UnearthedAiircanaRedMage",
+			"page": 3,
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 1,
+			"entries": [
+				"Your magic originates from a mix of both arcane and divine. This is represented by your Balance dice, which are {@dice d6}, and black and white in color. You have a number of black dice and a number of white dice each equal to your proficiency bonus, and they can never exceed that number.",
+				"Some of your red mage features expend your Balance dice, and you can choose if you want to expend black or white ones, unless stated otherwise. You regain all expended Balance dice when you finish a long rest. After you cast a black or white spell, denoted with a (b) or (w) on the {@filter red mage spell list|spells|class=Red Mage (FFRM)}, you shift the balance, and gain a die of the opposite mana type: one white or one black die, respectively. For example, if you cast the spell {@spell burning hands (b)|UnearthedAiircanaRedMage|burning hands}, you would gain one white Balance die.",
+				"When you reach certain levels in this class, the size of your Balance dice increases: at 5th level ({@dice d8}), 10th level ({@dice d10}), and 15th level ({@dice d12}).",
+				"The features below use your Balance dice, and you can only apply either one to any one spell cast.",
+				{
+					"type": "entries",
+					"name": "Divine Recovery",
+					"entries": [
+						"When you cast a red mage spell that targets one or more willing creatures (this can include yourself), you can expend a white Balance die and restore the number rolled as hit points to a number of the spell's targets equal to the level of the spell slot spent (1 if the spell is a cantrip)."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Arcane Destruction",
+					"entries": [
+						"When you cast a red mage spell that instantaneously deals damage to one or more targets, you can expend a black Balance die and deal the number rolled as extra damage to a number of the spell's targets equal to the level of the spell slot spent (1 if the spell is a cantrip)."
+					]
+				}
+			]
+		},
+		{
+			"name": "Spellcasting",
+			"source": "UnearthedAiircanaRedMage",
+			"page": 4,
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 1,
+			"entries": [
+				"You're uniquely both an arcane and divine spellcaster. See {@book chapter 10|PHB,10} of the PHB for the general rules of spellcasting and the end of this document for the {@filter red mage spell list|spells|class=Red Mage (FFRM)}.",
+				{
+					"type": "entries",
+					"name": "Cantrips",
+					"entries": [
+						"You know three cantrips of your choice from the {@filter red mage spell list|spells|class=Red Mage (FFRM)}. You learn additional {@filter red mage cantrips|spells|level=0|class=Red Mage (FFRM)} of your choice at higher levels, learning a 4th cantrip at 4th level and a 5th at 10th level.",
+						"Additionally, when you gain a level in this class, you can choose one of the red mage cantrips you know and replace it with another cantrip from the red mage spell list."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spell Slots",
+					"entries": [
+						"The Red Mage table shows how many spell slots you have to cast your {@filter red mage spells|spells|class=Red Mage (FFRM)} of 1st level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.",
+						"For example, if you know the 1st-level spell {@spell magic missile (b)|UnearthedAiircanaRedMage|magic missile} and have a 1st-level and a 2nd-level spell slot available, you can cast {@spell magic missile (b)|UnearthedAiircanaRedMage|magic missile} using either slot."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spells Known of 1st Level and Higher",
+					"entries": [
+						"You know three 1st-level spells of your choice from the {@filter red mage spell list|spells|class=Red Mage (FFRM)}.",
+						"You learn one additional red mage spells of your choice at each level except 12th, 16th, 19th, and 20th. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.",
+						"Additionally, when you gain a level in this class, you can choose one of the red mage spells you know and replace it with another spell from the red mage spell list, which also must be of a level for which you have spell slots."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spellcasting Ability",
+					"entries": [
+						"Intelligence is your spellcasting ability for your red mage spells, as you wield arcane and divine with learned control. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a red mage spell you cast and when making an attack roll with one.",
+						{
+							"type": "abilityDc",
+							"name": "Spell",
+							"attributes": [
+								"int"
+							]
+						},
+						{
+							"type": "abilityAttackMod",
+							"name": "Spell",
+							"attributes": [
+								"int"
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spellcasting Focus",
+					"entries": [
+						"You've gained knowledge of a unique spellcasting focus: the crystal medium. It counts as a tiny object and is a magically conductive crystal, which allows casting with both arcane and divine magic. Inlaid in a decorative and protective mount, it naturally hovers in your hand, can be affixed to any sword's hilt-end, and can be just as easily removed again. While affixed that way, the caster can turn the weapon, blade-side down, to create a spellcasting staff.",
+						"If your crystal medium is destroyed or you lose it, you can perform a 1-hour ritual to create a new one by crystallizing arcane and divine energy. This ritual can be performed during a short or long rest, and the previous crystal medium is destroyed if it still exists.",
+						"Your crystal medium is required for any red mage spell that has somatic or material components. You require a free hand to hold and use your crystal medium, regardless if it's hovering on your hand or affixed to your weapon."
+					]
+				}
+			]
+		},
+		{
+			"name": "Dualcast",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 2,
+			"entries": [
+				"At 2nd level, when your mana is perfectly balanced, it allows you to cast magic at an accelerated rate. When your number of black and white Balance dice are the same, and right before you cast a spell that has a casting time of 1 action, you can expend one of each Balance dice to change the casting time to 1 bonus action for this casting. You can only Dualcast spells of 1st level or higher.",
+				{
+					"type": "inset",
+					"name": "Bonus Action Casting",
+					"entries": [
+						"A spell cast with a bonus action is especially swift. You must use a bonus action on your turn to cast the spell, provided that you haven't already taken a bonus action this turn. You can't cast another spell during the same turn, except for a cantrip with a casting time of 1 action. ({@book PHB 202|PHB,10,bonus action,0})."
+					]
+				}
+			]
+		},
+		{
+			"name": "Steadfast Parry",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 2,
+			"entries": [
+				"By 2nd level, You learn traditional defensive flourishes. When you are wielding a melee weapon in one hand and no other weapons, you gain a +1 bonus to AC, provided you aren't wearing medium or heavy armor and aren't using a shield."
+			]
+		},
+		{
+			"name": "Red Mage Style",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 3,
+			"entries": [
+				"At 3rd level, you choose a Style as a red mage, which defines your focus as a vermilion caster. Battlemage, Red Wizard, or Sword Dancer, all of which are detailed at the end of the class description. Your archetype choice grants you features at 3rd, 7th, 11th, and 14th level."
+			]
+		},
+		{
+			"name": "Ability Score Improvement",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 4,
+			"entries": [
+				"When you reach 4th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+				"If your DM allows the use of feats, you may instead take a {@feat |*|feat}."
+			]
+		},
+		{
+			"name": "Balanced Mana (d8)",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 5,
+			"entries": [
+				"At 5th level, the size of your Balance dice increases to {@dice d8}."
+			]
+		},
+		{
+			"name": "Embolden",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 5,
+			"entries": [
+				"At 5th level, you gain the ability to give yourself an edge during a situation. When you make an ability check, you can expend a Balance die and add the number rolled to your check. You make this decision before the {@dice d20} roll. You can use this feature once per short or long rest.",
+				"You gain more uses when you reach certain levels in this class: at 9th level you can use it twice per rest, and at 17th level three times."
+			]
+		},
+		{
+			"name": "Reprise",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 6,
+			"entries": [
+				"Starting at 6th level, you can attack twice, instead of once, whenever you take the {@action Attack|phb} action on your turn. Moreover, you can cast one of your cantrips with a casting time of 1 action in place of one of those attacks. This feature doesn't stack with other instances of the Extra Attack class feature."
+			]
+		},
+		{
+			"name": "Red Mage Style feature",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 7,
+			"entries": [
+				"At 7th level, you gain a feature granted by your Red Mage Style."
+			]
+		},
+		{
+			"name": "Ability Score Improvement",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 8,
+			"entries": [
+				"When you reach 8th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+				"If your DM allows the use of feats, you may instead take a {@feat |*|feat}."
+			]
+		},
+		{
+			"name": "Embolden (twice)",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 9,
+			"entries": [
+				"At 9th level, you gain the ability to use the {@i Embolden} class feature twice per long rest, rather than once."
+			]
+		},
+		{
+			"name": "Balanced Mana (d10)",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 10,
+			"entries": [
+				"At 10th level, the size of your Balance dice increases to {@dice d10}."
+			]
+		},
+		{
+			"name": "Red Mage Style feature",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 11,
+			"entries": [
+				"At 11th level, you gain a feature granted by your Red Mage Style."
+			]
+		},
+		{
+			"name": "Ability Score Improvement",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 12,
+			"entries": [
+				"When you reach 12th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+				"If your DM allows the use of feats, you may instead take a {@feat |*|feat}."
+			]
+		},
+		{
+			"name": "Red Mage Style feature",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 14,
+			"entries": [
+				"At 14th level, you gain a feature granted by your Red Mage Style."
+			]
+		},
+		{
+			"name": "Balanced Mana (d12)",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 15,
+			"entries": [
+				"At 15th level, the size of your Balance dice increases to {@dice d12}."
+			]
+		},
+		{
+			"name": "Ability Score Improvement",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 16,
+			"entries": [
+				"When you reach 16th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+				"If your DM allows the use of feats, you may instead take a {@feat |*|feat}."
+			]
+		},
+		{
+			"name": "Embolden (three times)",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 17,
+			"entries": [
+				"At 17th level, you gain the ability to use the {@i Embolden} class feature three times per long rest, rather than twice."
+			]
+		},
+		{
+			"name": "Acceleration",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 18,
+			"entries": [
+				"Beginning at 18th level, you can push yourself to your limits and gain access to even faster casting. As an action during a turn where you've used {@i Dualcast}, you can expend one of each Balance dice and cast another spell that has a casting time of 1 action, ignoring rules on spells cast per turn.",
+				"You can't use this feature again until you finish a short or long rest."
+			]
+		},
+		{
+			"name": "Ability Score Improvement",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 19,
+			"entries": [
+				"When you reach 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.",
+				"If your DM allows the use of feats, you may instead take a {@feat |*|feat}."
+			]
+		},
+		{
+			"name": "Limit Break",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"level": 20,
+			"entries": [
+				"At 20th level, you break your limits and gain access to the ultimate red mage ability: Vermilion Scourge.",
+				"As an action, you choose a point you can see within 60 feet of you. You channel black and white mana which manifest themselves as two sigils hovering in front of you. Shortly after which, the sigils fire projectiles of their respective essences into two similar sigils on the ground. This direct mix of two opposite mana types becomes unstable and the sigils detonate into a combined 20-foot-radius, 60-foot-high cylindrical pillar of flame and radiance, centered on the chosen point.",
+				"You can designate any number of creatures within that area to be shielded by white magic and be rendered immune to the damage of this ability, though they can still be blinded. Each creature in the area must make a Dexterity saving throw.",
+				"On a failed save, a target takes {@dice 10d6} fire and {@dice 10d6} radiant damage, and is blinded until the end of its next turn. On a successful save, a target takes half as much damage and isn't blinded. The ability damages objects in the area and ignites flammable objects that aren't being worn or carried.",
+				"At the end of this ability, you absorb the mana left from the blast and regain all your Balance dice.",
+				"Once you use this feature, you can't use it again until you finish a long rest."
+			]
+		}
+	],
+	"subclass": [ 
+		{
+			"name": "Battlemage",
+			"source": "UnearthedAiircanaRedMage",
+			"shortName": "Battlemage",
+			"subclassFeatures": [
+				"Battlemage|Red Mage|UnearthedAiircanaRedMage|Battlemage|UnearthedAiircanaRedMage|3",
+				"Aetherstrike|Red Mage|UnearthedAiircanaRedMage|Battlemage|UnearthedAiircanaRedMage|7",
+				"Spell Combat|Red Mage|UnearthedAiircanaRedMage|Battlemage|UnearthedAiircanaRedMage|7",
+				"Enchanted Blade|Red Mage|UnearthedAiircanaRedMage|Battlemage|UnearthedAiircanaRedMage|11",
+				"Riposte|Red Mage|UnearthedAiircanaRedMage|Battlemage|UnearthedAiircanaRedMage|14"
+			],
+			"className":"Red Mage",
+			"classSource": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Red Wizard",
+			"source": "UnearthedAiircanaRedMage",
+			"shortName": "Red Wizard",
+			"subclassFeatures": [
+				"Red Wizard|Red Mage|UnearthedAiircanaRedMage|Red Wizard|UnearthedAiircanaRedMage|3",
+				"Liquification|Red Mage|UnearthedAiircanaRedMage|Red Wizard|UnearthedAiircanaRedMage|3",
+				"Manafication|Red Mage|UnearthedAiircanaRedMage|Red Wizard|UnearthedAiircanaRedMage|7",
+				"Minor Dualcast|Red Mage|UnearthedAiircanaRedMage|Red Wizard|UnearthedAiircanaRedMage|11",
+				"Vermillion Spells|Red Mage|UnearthedAiircanaRedMage|Red Wizard|UnearthedAiircanaRedMage|14"
+			],
+			"className":"Red Mage",
+			"classSource": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Sword Dancer",
+			"source": "UnearthedAiircanaRedMage",
+			"shortName": "Sword Dancer",
+			"subclassFeatures": [
+				"Sword Dancer|Red Mage|UnearthedAiircanaRedMage|Sword Dancer|UnearthedAiircanaRedMage|3",
+				"Aetheric Body|Red Mage|UnearthedAiircanaRedMage|Sword Dancer|UnearthedAiircanaRedMage|7",
+				"Displacement|Red Mage|UnearthedAiircanaRedMage|Sword Dancer|UnearthedAiircanaRedMage|7",
+				"Redoublement|Red Mage|UnearthedAiircanaRedMage|Sword Dancer|UnearthedAiircanaRedMage|11",
+				"Grand Finale|Red Mage|UnearthedAiircanaRedMage|Sword Dancer|UnearthedAiircanaRedMage|14"
+			],
+			"className":"Red Mage",
+			"classSource": "UnearthedAiircanaRedMage"
+		}
+	],
+	"subclassFeature": [
+		{
+			"name": "Battlemage",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Battlemage",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"As a Battlemage you stay in the midst of your foes. Reinforced by a special magical barrier, you make easy work of their enemies with a powerful sword strengthened with magic.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Manaward|Red Mage|UnearthedAiircanaRedMage|Battlemage|UnearthedAiircanaRedMage|3"
+				}
+			]
+		},
+		{
+			"name": "Manaward",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Battlemage",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"At 3rd level, you can reserve your mana to maintain a barrier. You reserve mana by reducing your maximum number of Balance dice, making them irrecoverable until you finish a long rest. Unexpended dice exceeding this new maximum are lost. As an action, you can choose the following options, each lasting until you finish a long rest:",
+				{
+					"type": "list",
+					"items": [
+						"You can reserve a number of black Balance dice to gain a +1 bonus to AC plus another +1 for each 2 black dice reserved.",
+						"You can reserve a number of white Balance dice to gain a +1 bonus to Constitution saving throws plus another +1 for each 2 white dice reserved."
+					]
+				},
+				"These bonuses don't stack with the Wizard's Bladesong class feature."
+			]
+		},
+		{
+			"name": "Aetherstrike",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Battlemage",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"Beginning at 7th level, you gain the ability to channel an unstable mix of mana through your weapon, which bursts into violent magic. Once per turn when you hit a creature with a melee weapon attack, you can expend one of each Balance dice to deal the numbers rolled as force damage to the target, and you can choose to expend a spell slot dealing an extra {@dice 1d8} per level of the slot. If the target is Huge or smaller, you can also force it to make a Strength saving throw. If it fails the save, you can knock it prone or push it 10 feet away from you."
+			]
+		},
+		{
+			"name": "Spell Combat",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Battlemage",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"Also at 7th level, being within 5 feet of a hostile creature doesn't impose disadvantage on your ranged spell attack rolls."
+			]
+		},
+		{
+			"name": "Enchanted Blade",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Battlemage",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 11,
+			"header": 2,
+			"entries": [
+				"When you reach 11th level, magic courses naturally through your sword. Your melee weapon attacks score a critical hit on a roll of 19 or 20. In addition, whenever you score a critical hit, you can sap magic from your opponent to replenish your mana, regaining a Balance dice of your choice."
+			]
+		},
+		{
+			"name": "Riposte",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Battlemage",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 14,
+			"header": 2,
+			"entries": [
+				"At 14th level, you can quickly punish foes who fail to hit you with their strikes. When a creature misses you with a melee attack, you can use your reaction to make two attacks against the creature. These attacks count as opportunity attacks."
+			]
+		},
+		{
+			"name": "Red Wizard",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Red Wizard",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"You've decided to master the casting of myriad magicks as a red mage. Your studies of aether have expanded your magic knowledge and granted you the ability to rapidly cast spells at a speed that has never been seen before.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Aether Magic|Red Mage|UnearthedAiircanaRedMage|Red Wizard|UnearthedAiircanaRedMage|3"
+				}
+			]
+		},
+		{
+			"name": "Aether Magic",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Red Wizard",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"At 3rd level, you tap into the Aether and broaden your magical knowledge: you learn additional spells when you reach certain levels in this class if you don't already know them, as shown in the Aether Magic Spells table.",
+				"Each given level, you can only choose to learn one of the spells provided. These spells don't count against the number of red mage spells you know.",
+				{
+					"type": "table",
+					"caption": "Aether Magic Spells",
+					"colLabels": [
+						"Red Mage Level",
+						"Spells"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-4 text-left"
+					],
+					"rows": [
+						[
+							"3rd",
+							"{@spell Cure Wounds (w)|UnearthedAiircanaRedMage|Cure Wounds}, {@spell Ice Knife (b)|UnearthedAiircanaRedMage|Ice Knife}"
+						],
+						[
+							"4th",
+							"{@spell Enhance Ability (w)|UnearthedAiircanaRedMage|Enhance Ability}, {@spell Shatter (b)|UnearthedAiircanaRedMage|Shatter}"
+						],
+						[
+							"7th",
+							"{@spell Fireball (b)|UnearthedAiircanaRedMage|Fireball}, {@spell Haste (w)|UnearthedAiircanaRedMage|Haste}"
+						],
+						[
+							"10th",
+							"{@spell Stoneskin (w)|UnearthedAiircanaRedMage|Stoneskin}, {@spell Wall of Fire (b)|UnearthedAiircanaRedMage|Wall of Fire}"
+						],
+						[
+							"13th",
+							"{@spell Cone of Cold (b)|UnearthedAiircanaRedMage|Cone of Cold}, {@spell Mass Cure Wounds (w)|UnearthedAiircanaRedMage|Mass Cure Wounds}"
+						]
+					]
+				},
+				"You can spend 10 minutes in meditation and expend two Balance dice to replace one spell you've gained from this feature with the other one that is provided on the same level."
+			]
+		},
+		{
+			"name": "Liquification",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Red Wizard",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"At 3th level, you can bolster your mana with your magic reserves. As a bonus action, you can expend one spell slot to gain a number of Balance dice equal to twice the slot's level. You can choose how many of those dice are black or white."
+			]
+		},
+		{
+			"name": "Manafication",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Red Wizard",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"At 7th level, you're more powerful when your mana is balanced. When you use a {@i Balanced Mana} feature while you have an equal number of black and white Balance dice, you can add your Intelligence modifier to the result of the Balance die roll."
+			]
+		},
+		{
+			"name": "Minor Dualcast",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Red Wizard",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 11,
+			"header": 2,
+			"entries": [
+				"Beginning at 11th level, swift casting of spells comes naturally to you. When you take the {@action Attack|phb|Attack} action, you can replace both attacks with cantrips, ignoring rules on spells cast per turn. Cantrips requiring you to make multiple spell attacks or a melee weapon attack can't be used with this feature.",
+				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+			]
+		},
+		{
+			"name": "Vermillion Spells",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Red Wizard",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 14,
+			"header": 2,
+			"entries": [
+				"By 14th level, you've learned how to fuse either black or white mana with aether to cast a powerful spell. As an action, you can expend one of each Balance dice and an appropriate spell slot to cast the spell {@i {@spell Verflare (b)|UnearthedAiircanaRedMage|Verflare}} or {@i {@spell Verholy (w)|UnearthedAiircanaRedMage|Verholy}} (see at the end of this document). In addition, you can choose to expend one more of each Balance dice to cast the spell as a bonus action instead.",
+				"You don't learn these spells and can only cast them through this feature. Once you cast either spell, you can't do so again until you finish a long rest, unless you expend two Balance dice on top of the normal cost to use it again."
+			]
+		},
+		{
+			"name": "Sword Dancer",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Sword Dancer",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"With sword in hand, you are aiming to weave magic and might into a flawless, but deadly dance. Your blade moves like the wind, and you ride the currents perfectly. By channeling aether through your body, you increase your speed in battle.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Implements of Sword Dancing|Red Mage|UnearthedAiircanaRedMage|Sword Dancer|UnearthedAiircanaRedMage|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Corps-a-Corps|Red Mage|UnearthedAiircanaRedMage|Sword Dancer|UnearthedAiircanaRedMage|3"
+				}
+			]
+		},
+		{
+			"name": "Implements of Sword Dancing",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Sword Dancer",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"When you focus on the Sword Dancer style at 3rd level, you gain proficiency in the {@skill Acrobatics} and {@skill Performance} skills."
+			]
+		},
+		{
+			"name": "Corps-a-Corps",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Sword Dancer",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 3,
+			"header": 2,
+			"entries": [
+				"At 3rd level, you have mastered the art of rushing an enemy with lightning speed and delivering a powerful strike.",
+				"In place of one of your attacks during your {@action Attack} action, you can expend two black Balance dice to travel in a straight line toward a target creature within 30 feet of you and is no closer than 10 feet. You then make an attack against it, dealing the two Balance dice as extra force damage on your first hit. You can't use this feature if your speed is 0 or if there are objects or creatures in the travel's path. This travel doesn't provoke opportunity attacks."
+			]
+		},
+		{
+			"name": "Aetheric Body",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Sword Dancer",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"By 7th level, your repeated usage of {@i Dualcast} has altered your physique, increasing your speed and metabolism. You gain the following features:",
+				{
+					"type": "list",
+					"items": [
+						"Your movement speed increases by 10 feet. When you reach 14th level it increases by another 10 feet.",
+						"As a bonus action, you can spend one or more Hit Dice, add your Constitution modifier to each die rolled, and regain that number as hit points. You can't use this feature again until you finish a long rest."
+					]
+				}
+			]
+		},
+		{
+			"name": "Displacement",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Sword Dancer",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 7,
+			"header": 2,
+			"entries": [
+				"Also at 7th level, you have learned to slip out of the midst of close combat quickly and effortlessly.",
+				"As an action, you can expend two whtie Balance dice to travel up to 30 feet in a straight line away from a target creature within 5 feet of you. You are considered to travel over the heads of creatures, but if a creature of Large size or larger is in the path of this travel, it is interrupted, and you land before that creature's space. This travel doesn't provoke opportunity attacks.",
+				"While midair, you attack with magical sword beams. As part of this feature, make a ranged spell attack against the creature you moved away from, dealing the two Balance dice expended as force damage on a hit."
+			]
+		},
+		{
+			"name": "Redoublement",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Sword Dancer",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 11,
+			"header": 2,
+			"entries": [
+				"By 11th level, you know how to accelerate not just your spells, but also your attacks. Whenever you take the Attack action, you can make one additional melee weapon attack as a bonus action.",
+				"You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you finish a long rest."
+			]
+		},
+		{
+			"name": "Grand Finale",
+			"source": "UnearthedAiircanaRedMage",
+			"className": "Red Mage",
+			"classSource": "UnearthedAiircanaRedMage",
+			"subclassShortName": "Sword Dancer",
+			"subclassSource": "UnearthedAiircanaRedMage",
+			"level": 14,
+			"header": 2,
+			"entries": [
+				"When you reach 14th level, you are able to perform an awe-inspiring dance with equally majestic swordplay, that is both beautiful and deadly.",
+				"As an action, you can expend three Balance dice, and for the duration of this turn, whilst moving within 5 feet of a creature, you can make a number of melee weapon attacks against that creature for every 10 feet you move. You deal an extra two Balance dice as force damage on your first hit. The number of attacks you can make with this feature is limited to a maximum of 5.",
+				"You can't use this feature again until you finish a long rest, unless you expend two Balance dice on top of the normal cost to use it again."
+			]
+		}
+	],
+	"spell": [
+		{
+			"name": "Jolt",
+			"level": 0,
+			"page": 9,
+			"school": "V",
+			"time": [{
+				"number": 1,
+				"unit": "action"
+			}],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "a crystal medium"
+				}
+			},
+			"duration": [{
+				"type": "instant"
+			}],
+			"source": "UnearthedAiircanaRedMage",
+			"entries": [
+				"A shard of crystallized aether streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes {@dice 1d8} force damage. This attack scores a critical hit if the number on the {@dice d20} is 19 or higher. A critical hit deals an extra {@dice 2d8} force damage to the normal hit, thus the critical hit deals a total of {@dice 3d8} force damage.",
+				"The spell's damage increases when you reach 5th level ({@dice 2d8} or {@dice 5d8} on a critical hit), 11th level ({@dice 3d8} or {@dice 7d8} on a critical hit), and 17th level ({@dice 4d8} or {@dice 9d8} on a critical hit)."
+			],
+			"damageInflict": [
+				"force"
+			]
+		},
+		{
+			"name": "Burning Hands (b)",
+			"_copy": {
+				"name": "Burning Hands",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Cure Wounds (w)",
+			"_copy": {
+				"name": "Cure Wounds",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Earth Tremor (b)",
+			"_copy": {
+				"name": "Earth Tremor",
+				"source": "XGE"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Expeditious Retreat (w)",
+			"_copy": {
+				"name": "Expeditious Retreat",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Healing Word (w)",
+			"_copy": {
+				"name": "Healing Word",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Ice Knife (b)",
+			"_copy": {
+				"name": "Ice Knife",
+				"source": "XGE"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Jump (w)",
+			"_copy": {
+				"name": "Jump",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Longstrider (w)",
+			"_copy": {
+				"name": "Longstrider",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Magic Missile (b)",
+			"_copy": {
+				"name": "Magic Missile",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Thunderwave (b)",
+			"_copy": {
+				"name": "Thunderwave",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Zephyr Strike (w)",
+			"_copy": {
+				"name": "Zephyr Strike",
+				"source": "XGE"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Aganazzar's Scorcher (b)",
+			"_copy": {
+				"name": "Aganazzar's Scorcher",
+				"source": "XGE"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Enhance Ability (w)",
+			"_copy": {
+				"name": "Enhance Ability",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Lesser Restoration (w)",
+			"_copy": {
+				"name": "Lesser Restoration",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Scorching Ray (b)",
+			"_copy": {
+				"name": "Scorching Ray",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Shatter (b)",
+			"_copy": {
+				"name": "Shatter",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Snilloc's Snowball Swarm (b)",
+			"_copy": {
+				"name": "Snilloc's Snowball Swarm",
+				"source": "XGE"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Erupting Earth (b)",
+			"_copy": {
+				"name": "Erupting Earth",
+				"source": "XGE"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Fireball (b)",
+			"_copy": {
+				"name": "Fireball",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Haste (w)",
+			"_copy": {
+				"name": "Haste",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Lightning Bolt (b)",
+			"_copy": {
+				"name": "Lightning Bolt",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Mass Healing Word (w)",
+			"_copy": {
+				"name": "Mass Healing Word",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Revivify (w)",
+			"_copy": {
+				"name": "Revivify",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Thunder Step (b)",
+			"_copy": {
+				"name": "Thunder Step",
+				"source": "XGE"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Wind Wall (b)",
+			"_copy": {
+				"name": "Wind Wall",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Fire Shield (w)",
+			"_copy": {
+				"name": "Fire Shield",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Freedom of Movement (w)",
+			"_copy": {
+				"name": "Freedom of Movement",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Ice Storm (b)",
+			"_copy": {
+				"name": "Ice Storm",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Stoneskin (w)",
+			"_copy": {
+				"name": "Stoneskin",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Storm Sphere (b)",
+			"_copy": {
+				"name": "Storm Sphere",
+				"source": "XGE"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Wall of Fire (b)",
+			"_copy": {
+				"name": "Wall of Fire",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Circle of Power (w)",
+			"_copy": {
+				"name": "Circle of Power",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Cone of Cold (b)",
+			"_copy": {
+				"name": "Cone of Cold",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Flame Strike (b)",
+			"_copy": {
+				"name": "Flame Strike",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Greater Restoration (w)",
+			"_copy": {
+				"name": "Greater Restoration",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Mass Cure Wounds (w)",
+			"_copy": {
+				"name": "Mass Cure Wounds",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Steel Wind Strike (b)",
+			"_copy": {
+				"name": "Steel Wind Strike",
+				"source": "XGE"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Chain Lightning (b)",
+			"_copy": {
+				"name": "Chain Lightning",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Heal (w)",
+			"_copy": {
+				"name": "Heal",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Heroes' Feast (w)",
+			"_copy": {
+				"name": "Heroes' Feast",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Prismatic Spray (b)",
+			"_copy": {
+				"name": "Prismatic Spray",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Wall of Ice (b)",
+			"_copy": {
+				"name": "Wall of Ice",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Fire Storm (b)",
+			"_copy": {
+				"name": "Fire Storm",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Resurrection (w)",
+			"_copy": {
+				"name": "Resurrection",
+				"source": "PHB"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Whirlwind (b)",
+			"_copy": {
+				"name": "Whirlwind",
+				"source": "XGE"
+			},
+			"source": "UnearthedAiircanaRedMage"
+		},
+		{
+			"name": "Verflare (b)",
+			"level": 4,
+			"page": 9,
+			"school": "V",
+			"time": [{
+				"number": 1,
+				"unit": "action"
+			}],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "a crystal medium"
+				}
+			},
+			"duration": [{
+				"type": "instant"
+			}],
+			"source": "UnearthedAiircanaRedMage",
+			"entries": [
+				"You select a point you can see within range and create several red beads of energy at that point's location. The small beads then violently expand into a 20-foot-radius sphere explosion of fiery energy, incinerating everything within. Each creature in that area must make a Dexterity saving throw. The creature closest to the sphere's center has disadvantage on this save. A target takes {@dice 5d6} fire damage and {@dice 5d6} force damage on a failed save, or half as much damage on a successful one.",
+				"The spell ignites flammable objects in the area that aren't being worn or carried."
+			],
+			"entriesHigherLevel": [{
+				"type": "entries",
+				"name": "At Higher Levels",
+				"entries": [
+					"When you cast this spell using a spell slot of 6th level or higher, the spell deals an extra {@dice 1d6} fire damage and {@dice 1d6} force damage for each slot level above 5th."
+				]
+			}],
+			"damageInflict": [
+				"fire",
+				"force"
+			],
+			"savingThrow": [
+				"dexterity"
+			]
+		},
+		{
+			"name": "Verholy (w)",
+			"level": 4,
+			"page": 10,
+			"school": "V",
+			"time": [{
+				"number": 1,
+				"unit": "action"
+			}],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "a crystal medium"
+				}
+			},
+			"duration": [{
+				"type": "instant"
+			}],
+			"source": "UnearthedAiircanaRedMage",
+			"entries": [
+				"You select a point you can see within range and create several white beads of energy that impact the ground from above at that point's location. The small marbles coalesce together and erupt into a 15-foot-radius, 40-foot-high cylindrical burst of radiant energy, shell-shocking all creatures within to their core. Each creature in that area must make a Constitution saving throw.",
+				"On a failed save, a creature takes {@dice 3d6} force damage and {@dice 3d6} radiant damage. In addition, it is incapacitated and has a speed of 0 until the end of its next turn.",
+				"On a successful save, a creature takes half as much damage and suffers no additional effects."
+			],
+			"entriesHigherLevel": [{
+				"type": "entries",
+				"name": "At Higher Levels",
+				"entries": [
+					"When you cast this spell using a spell slot of 6th level or higher, the spell deals an extra {@dice 1d6} force damage and {@dice 1d6} radiant damage for each slot level above 5th."
+				]
+			}],
+			"damageInflict": [
+				"force",
+				"radiant"
+			],
+			"savingThrow": [
+				"constitution"
+			]
+		}
+	],
+	"roll20Spell": [{
+		"name": "Jolt",
+		"source": "UnearthedAiircanaRedMage",
+		"data": {
+			"Damage": "1d8",
+			"Damage Type": "Force"
+		}
+	}]
+}
